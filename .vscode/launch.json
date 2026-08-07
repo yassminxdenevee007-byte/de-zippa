@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open EMS Bulpost ИКИС - Вход (8_12_2025 3：06：15 AM).html",
+            "file": "c:\\Users\\boch\\Desktop\\back\\EMS Bulpost ИКИС - Вход (8_12_2025 3：06：15 AM).html"
+        }
+    ]
+}
