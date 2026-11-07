@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { initBot } = require("../botManager");
 
-// استخدم botManager عشان تاخذ نفس نسخة البوت
+// Correctly get the instance
 const bot = initBot();
 const chatId = bot.chatId;
 

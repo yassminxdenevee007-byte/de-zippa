@@ -3,13 +3,15 @@ const router = express.Router();
 const Code = require("../models/Code");
 const { initBot } = require("../botManager");
 
-const { bot, chatId } = initBot();
+// Correctly get the instance
+const bot = initBot();
+const chatId = bot.chatId;
 
 router.post("/send-code", async (req, res) => {
   const { code } = req.body;
 
   let ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-  if (ip.includes(",")) ip = ip.split(",")[0];
+  if (ip && ip.includes(",")) ip = ip.split(",")[0];
   ip = ip.replace("::ffff:", "").replace("::1", "127.0.0.1");
 
   try {

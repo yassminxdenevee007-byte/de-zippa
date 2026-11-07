@@ -11,13 +11,14 @@ function initBot() {
     const chatId = process.env.CHAT_ID || process.env.TELEGRAM_CHAT_ID;
     
     if (!botToken || !chatId) {
-      throw new Error("BOT_TOKEN or CHAT_ID missing");
+      throw new Error("BOT_TOKEN or CHAT_ID missing from environment variables");
     }
     
+    // Initialize bot without polling first
     botInstance = new TelegramBot(botToken, { polling: false });
     botInstance.chatId = chatId;
     
-    console.log("✅ Bot instance created (polling disabled)");
+    console.log("✅ Bot instance created successfully");
   }
   return botInstance;
 }
@@ -36,8 +37,7 @@ function startPolling() {
   try {
     botInstance.startPolling();
     pollingActive = true;
-    console.log("✅ Bot polling started");
-    
+    console.log("✅ Bot polling started (24/7 mode)");
   } catch (error) {
     console.error("❌ Error starting polling:", error.message);
   }
